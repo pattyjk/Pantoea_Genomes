@@ -88,10 +88,10 @@ n
 
 ## Catenate genomes into a single database
 ```
-anvi-gen-genomes-storage -e anvi_gen.txt -o pantoea-GENOMES.db
+anvi-gen-genomes-storage -e anvi_gen.txt -o pantoea-GENOMES.db 
 
 #pangenome analysis
-anvi-pan-genome -g pantoea-GENOMES.db -n pantoea
+anvi-pan-genome -g pantoea-GENOMES.db -n pantoea --enforce-hierarchical-clustering --min-occurrence 2
 
 #view analysis
 anvi-display-pan -g pantoea-GENOMES.db -p pantoea/pantoea-PAN.db
