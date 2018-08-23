@@ -96,3 +96,7 @@ anvi-pan-genome -g pantoea-GENOMES.db -n pantoea --enforce-hierarchical-clusteri
 #view analysis
 anvi-display-pan -g pantoea-GENOMES.db -p pantoea/pantoea-PAN.db
 ```
+## Calculate ANI between genomes
+```
+anvi-compute-ani -o ANI -e anvi_gen.txt -T 8 -p pantoea/pantoea-PAN.db
+```
