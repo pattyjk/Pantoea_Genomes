@@ -114,3 +114,19 @@ anvi-gen-phylogenomic-tree -f concatenated-proteins.fa -o pantoea_tree.tree
 ```
 anvi-get-sequences-for-hmm-hits -e anvi_gen.txt --gene-names Bacterial_16S_rRNA -o pantoea_16s.fna --return-best-hit
 ```
+
+## Annotate biosynthetic clusters with AntiSmash
+```
+conda activate antismash
+antismash --input-type nucl --outputfolder test_as 
+
+cd raw_fasta
+
+mkdir anti_out
+
+for i in *.fna
+do
+antismash --input-type nucl --outputfolder anti_out/out_$i $i 
+   
+done
+```
