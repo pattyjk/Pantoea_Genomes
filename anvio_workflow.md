@@ -96,6 +96,7 @@ anvi-pan-genome -g pantoea-GENOMES.db -n pantoea --enforce-hierarchical-clusteri
 #view analysis
 anvi-display-pan -g pantoea-GENOMES.db -p pantoea/pantoea-PAN.db
 ```
+
 ## Calculate ANI between genomes
 ```
 anvi-compute-ani -o ANI -e anvi_gen.txt -T 8 -p pantoea/pantoea-PAN.db
@@ -109,3 +110,7 @@ anvi-get-sequences-for-hmm-hits --external-genomes anvi_gen.txt -o concatenated-
 anvi-gen-phylogenomic-tree -f concatenated-proteins.fa -o pantoea_tree.tree
 ```
 
+## Extract 16S rRNA gene sequences
+```
+anvi-get-sequences-for-hmm-hits -e anvi_gen.txt --gene-names Bacterial_16S_rRNA -o pantoea_16s.fna --return-best-hit
+```
