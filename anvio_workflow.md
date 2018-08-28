@@ -1,4 +1,4 @@
-## Anvi'o pangenome worflow (v. 5)
+## Anvi'o pangenome workflow (v. 5)
 ```
 #load anvio with Anaconda
 source activate anvio5
@@ -100,3 +100,12 @@ anvi-display-pan -g pantoea-GENOMES.db -p pantoea/pantoea-PAN.db
 ```
 anvi-compute-ani -o ANI -e anvi_gen.txt -T 8 -p pantoea/pantoea-PAN.db
 ```
+
+## Make genome tree
+```
+#generate genome tree
+anvi-get-sequences-for-hmm-hits --external-genomes anvi_gen.txt -o concatenated-proteins.fa --hmm-source Campbell_et_al --gene-names Ribosomal_L1,Ribosomal_L2,Ribosomal_L3,Ribosomal_L4,Ribosomal_L5,Ribosomal_L6 --return-best-hit --get-aa-sequence --concatenate
+
+anvi-gen-phylogenomic-tree -f concatenated-proteins.fa -o pantoea_tree.tree
+```
+
